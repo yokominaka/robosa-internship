@@ -8,7 +8,7 @@ export interface CompileResult {
   error?: string;
 }
 
-export const DEFAULT_COMPILE_ENDPOINT = 'http://localhost:8080/compile';
+export const DEFAULT_COMPILE_ENDPOINT = import.meta.env.VITE_COMPILE_ENDPOINT || 'http://localhost:8080/compile';
 
 /**
  * Sends Arduino C++ sketch source to the compile backend.
