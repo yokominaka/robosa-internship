@@ -1,0 +1,157 @@
+:root {
+  /* Robosa Authentic Color Palette */
+  --bg-canvas: #080a08;
+  --bg-panel: #111510;
+  --bg-panel-elevated: #141a13;
+  --border-subtle: #242e21;
+  --border-active: #3a4d2c;
+
+  /* Brand Accents */
+  --volt-lime: #c6ff00;
+  --volt-lime-glow: rgba(198, 255, 0, 0.25);
+  --cyan-telemetry: #38bdf8;
+  --amber-xp: #facc15;
+  --purple-schematic: #a855f7;
+  --crimson-fault: #ef4444;
+
+  /* Typography */
+  --text-primary: #e6ede4;
+  --text-muted: #74856f;
+  --text-dim: #445440;
+
+  /* Fonts */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Editor & Component Colors */
+  --editor-bg: #0d120c;
+  --gutter-bg: #090e09;
+  --serial-bg: #070a07;
+  --line: #242e21;
+  --text: #e6ede4;
+  --muted: #74856f;
+  --accent: #c6ff00;
+  --err: #ef4444;
+  --warn: #facc15;
+  --success: #5fd38d;
+}
+
+/* Wokwi Custom Elements defaults */
+wokwi-arduino-uno,
+wokwi-led,
+wokwi-pushbutton,
+wokwi-resistor {
+  display: block !important;
+  user-select: none;
+}
+
+wokwi-arduino-uno {
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  /* Robosa Vertical Structural Grid (every 64px) */
+  background-image: linear-gradient(
+    90deg,
+    rgba(198, 255, 0, 0.025) 1px,
+    transparent 1px
+  );
+  background-size: 64px 100%;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Robosa Chamfered Primary CTA Button */
+.robosa-btn-chamfered {
+  position: relative;
+  background: var(--volt-lime);
+  color: #080a08;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px 18px;
+  cursor: pointer;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%
+  );
+  transition: all 0.15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.robosa-btn-chamfered:hover {
+  background: #d8ff33;
+  box-shadow: 0 0 16px var(--volt-lime-glow);
+}
+
+.robosa-btn-chamfered:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Secondary Dark Button */
+.robosa-btn-secondary {
+  background: #182017;
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.robosa-btn-secondary:hover {
+  border-color: var(--border-active);
+  background: #202b1e;
+}
+
+.robosa-btn-secondary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d120c;
+}
+::-webkit-scrollbar-thumb {
+  background: #242e21;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a4d2c;
+}
